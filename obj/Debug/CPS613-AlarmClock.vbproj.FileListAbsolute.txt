@@ -1,0 +1,15 @@
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\bin\Debug\CPS613-AlarmClock.exe.config
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\bin\Debug\CPS613-AlarmClock.exe
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\bin\Debug\CPS613-AlarmClock.pdb
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\bin\Debug\CPS613-AlarmClock.xml
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\obj\Debug\CPS613-AlarmClock.vbprojAssemblyReference.cache
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\obj\Debug\CPS613_AlarmClock.AlarmClock.resources
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\obj\Debug\CPS613_AlarmClock.Resources.resources
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\obj\Debug\CPS613_AlarmClock.TimePanel.resources
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\obj\Debug\CPS613-AlarmClock.vbproj.GenerateResource.cache
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\obj\Debug\CPS613-AlarmClock.vbproj.CoreCompileInputs.cache
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\obj\Debug\CPS613-AlarmClock.exe
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\obj\Debug\CPS613-AlarmClock.xml
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\obj\Debug\CPS613-AlarmClock.pdb
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\obj\Debug\CPS613_AlarmClock.AlarmPanel.resources
+C:\Users\Armen\source\repos\CPS613-AlarmClock\CPS613-AlarmClock\obj\Debug\CPS613_AlarmClock.Keypad.resources
