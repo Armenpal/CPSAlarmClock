@@ -1,24 +1,36 @@
 ﻿Public Class DigitLED
 
-    Public maxDigitValue As Integer
-    Public minDigitValue As Integer
-    Public value As Integer
+    Public maxDigitValue As Integer = 0
+    Public minDigitValue As Integer = 0
 
     Public Function GetDigit() As String
-        Return value
+        Return minDigitValue
     End Function
 
     Public Sub SetColour()
 
     End Sub
 
-    Public Function setDigit(obj As String)
-        value = CInt(obj)
-    End Function
+    Public Property MaxDigit As Integer
+        Get
+            Return maxDigitValue
+        End Get
+        Set(value As Integer)
+            minDigitValue = value
+        End Set
+    End Property
 
-    Public Sub New()
-        minDigitValue = 0
-        maxDigitValue = 0
-        value = 0
+    Public Property MinDigit As Integer
+        Get
+            Return minDigitValue
+        End Get
+        Set(value As Integer)
+            minDigitValue = value
+        End Set
+    End Property
+
+    Public Sub setDigit(obj As String)
+        minDigitValue = CInt(obj)
     End Sub
+
 End Class

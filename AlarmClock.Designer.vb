@@ -22,6 +22,7 @@ Partial Class AlarmClock
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.AlarmClockTabs = New System.Windows.Forms.TabControl()
         Me.ClockTab = New System.Windows.Forms.TabPage()
         Me.ClockKeypad = New CPS613_AlarmClock.Keypad()
@@ -35,6 +36,7 @@ Partial Class AlarmClock
         Me.Alarm2Panel = New CPS613_AlarmClock.AlarmPanel()
         Me.AlarmTab3 = New System.Windows.Forms.TabPage()
         Me.Alarm3Panel = New CPS613_AlarmClock.AlarmPanel()
+        Me.Timer = New System.Windows.Forms.Timer(Me.components)
         Me.AlarmClockTabs.SuspendLayout()
         Me.ClockTab.SuspendLayout()
         Me.AlarmTab1.SuspendLayout()
@@ -181,6 +183,10 @@ Partial Class AlarmClock
         Me.Alarm3Panel.Size = New System.Drawing.Size(500, 603)
         Me.Alarm3Panel.TabIndex = 0
         '
+        'Timer
+        '
+        Me.Timer.Interval = 1000
+        '
         'AlarmClock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -213,4 +219,5 @@ Partial Class AlarmClock
     Friend WithEvents Alarm2Panel As AlarmPanel
     Friend WithEvents Alarm1Panel As AlarmPanel
     Friend WithEvents ClockKeypad As Keypad
+    Friend WithEvents Timer As Timer
 End Class

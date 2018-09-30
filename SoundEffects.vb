@@ -1,7 +1,11 @@
 ﻿Module SoundEffects
 
-    Public Function PlaySoundEffect()
+    Public Sub PlaySoundEffect()
+        My.Computer.Audio.Play("C:\Users\Armen\Desktop\CPS613\bird.wav")
+    End Sub
 
-    End Function
+    Public Sub StopSoundEffect()
+        My.Computer.Audio.Stop()
+    End Sub
 
 End Module
