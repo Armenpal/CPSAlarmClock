@@ -19,18 +19,21 @@
         Alarm1Panel.TimePanel.DigitLED2.setDigit("0")
         Alarm1Panel.TimePanel.DigitLED3.setDigit("0")
         Alarm1Panel.TimePanel.DigitLED4.setDigit("0")
-        Alarm1Panel.TimePanel.setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4)
+        Alarm1Panel.TimePanel.TimeLabel.Text = DigitLED1.minDigitValue & DigitLED2.minDigitValue & ":" &
+        DigitLED3.minDigitValue & DigitLED4.minDigitValue
+        Alarm1Panel.TimePanel.AMRadioButton.Checked = True
         Alarm1Panel.AlarmKeypad.CloseKeypad()
 
     End Sub
 
     Public Sub Alarm2Panel_Load(sender As Object, e As EventArgs) Handles Alarm2Panel.Load
-
         Alarm2Panel.TimePanel.DigitLED1.setDigit("0")
         Alarm2Panel.TimePanel.DigitLED2.setDigit("0")
         Alarm2Panel.TimePanel.DigitLED3.setDigit("0")
         Alarm2Panel.TimePanel.DigitLED4.setDigit("0")
-        Alarm2Panel.TimePanel.setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4)
+        Alarm2Panel.TimePanel.TimeLabel.Text = DigitLED1.minDigitValue & DigitLED2.minDigitValue & ":" &
+        DigitLED3.minDigitValue & DigitLED4.minDigitValue
+        Alarm2Panel.TimePanel.AMRadioButton.Checked = True
         Alarm2Panel.AlarmKeypad.CloseKeypad()
 
     End Sub
@@ -40,7 +43,9 @@
         Alarm3Panel.TimePanel.DigitLED2.setDigit("0")
         Alarm3Panel.TimePanel.DigitLED3.setDigit("0")
         Alarm3Panel.TimePanel.DigitLED4.setDigit("0")
-        Alarm3Panel.TimePanel.setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4)
+        Alarm3Panel.TimePanel.TimeLabel.Text = DigitLED1.GetDigit() & DigitLED2.minDigitValue & ":" &
+        DigitLED3.minDigitValue & DigitLED4.minDigitValue
+        Alarm3Panel.TimePanel.AMRadioButton.Checked = True
         Alarm3Panel.AlarmKeypad.CloseKeypad()
     End Sub
 
@@ -60,7 +65,7 @@
         End If
     End Sub
 
-    Private Sub Alarm3CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles Alarm3CheckBox.CheckedChanged
+    Public Sub Alarm3CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles Alarm3CheckBox.CheckedChanged
         If Alarm3CheckBox.Checked Then
             Alarm3Panel.AlarmCheckBox.Checked = True
         ElseIf Alarm3CheckBox.Checked = False Then

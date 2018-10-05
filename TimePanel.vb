@@ -46,6 +46,7 @@ Public Class TimePanel
             DigitLED3.setDigit("0")
             DigitLED4.setDigit("0")
             setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4)
+            AlarmClock.Alarm1Panel.TimePanel.AMRadioButton.Checked = True
             AlarmClock.Alarm1Panel.AlarmKeypad.CloseKeypad()
         End If
 
@@ -55,6 +56,7 @@ Public Class TimePanel
             DigitLED3.setDigit("0")
             DigitLED4.setDigit("0")
             setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4)
+            AlarmClock.Alarm2Panel.TimePanel.AMRadioButton.Checked = True
             AlarmClock.Alarm2Panel.AlarmKeypad.CloseKeypad()
         End If
 
@@ -64,12 +66,15 @@ Public Class TimePanel
             DigitLED3.setDigit("0")
             DigitLED4.setDigit("0")
             setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4)
+            AlarmClock.Alarm3Panel.TimePanel.AMRadioButton.Checked = True
             AlarmClock.Alarm3Panel.AlarmKeypad.CloseKeypad()
         End If
     End Sub
 
     Public Sub SetButton_Click(sender As Object, e As EventArgs) Handles SetButton.Click
-        If AlarmClock.AlarmClockTabs.SelectedTab.Name = "ClockTab" Then
+        sender = AlarmClock.AlarmClockTabs.SelectedTab.Name
+
+        If sender = "ClockTab" Then
             DigitLED1.setDigit("0")
             DigitLED2.setDigit("0")
             DigitLED3.setDigit("0")
@@ -78,20 +83,21 @@ Public Class TimePanel
             AlarmClock.ClockKeypad.ActivateKeypad()
         End If
 
-        If AlarmClock.AlarmClockTabs.SelectedTab.Name = "AlarmTab1" Then
+        If sender = "AlarmTab1" Then
             AlarmClock.Alarm1Panel.AlarmKeypad.ActivateKeypad()
         End If
 
-        If AlarmClock.AlarmClockTabs.SelectedTab.Name = "AlarmTab2" Then
+        If sender = "AlarmTab2" Then
             AlarmClock.Alarm2Panel.AlarmKeypad.ActivateKeypad()
         End If
 
-        If AlarmClock.AlarmClockTabs.SelectedTab.Name = "AlarmTab3" Then
+        If sender = "AlarmTab3" Then
             AlarmClock.Alarm3Panel.AlarmKeypad.ActivateKeypad()
         End If
     End Sub
 
     Public Sub setTime(time As DigitLED, time2 As DigitLED, time3 As DigitLED, time4 As DigitLED)
+
         If AmPm = "PM" Then
             AlarmClock.ClockTimePanel.PMRadioButton.Checked = True
         End If
@@ -100,6 +106,7 @@ Public Class TimePanel
             AlarmClock.ClockTimePanel.AMRadioButton.Checked = True
         End If
         AlarmClock.ClockTimePanel.TimeLabel.Text = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
+
     End Sub
 
     Public Function getTime() As String
