@@ -43,13 +43,13 @@
         For Each num In buttonArray
 
             If Digit1set = False Then
-
-                If Digit1.minDigitValue = 0 Then
-                    activateDigits(2)
+                If Digit1.minDigitValue = 1 Then
+                    DeactivateDigit(2)
+                    DigitButton2.Enabled = True
                     Digit1.setDigit(button.Text)
                     Digit1set = True
                 End If
-                If Digit1.minDigitValue < 1 Then
+                If Digit1.minDigitValue = 0 Then
                     activateDigits(1)
                     Digit1.setDigit(button.Text)
                     Digit1set = True
@@ -63,6 +63,7 @@
                 Digit2.setDigit(button.Text)
                 Exit For
             End If
+
             If Digit3set = False Then
                 activateDigits(3)
                 Digit3set = True
@@ -187,6 +188,8 @@
 
 
     Public Sub DeactivateDigit(ByVal num As Integer)
+
+        'Set'
         If num = 1 Then
             DigitButton2.Enabled = False
             DigitButton3.Enabled = False
@@ -197,7 +200,9 @@
             DigitButton8.Enabled = False
             DigitButton9.Enabled = False
         End If
+
         If num = 2 Then
+            DigitButton2.Enabled = True
             DigitButton3.Enabled = False
             DigitButton4.Enabled = False
             DigitButton5.Enabled = False
@@ -224,10 +229,6 @@
             DigitButton7.Enabled = True
             DigitButton8.Enabled = True
             DigitButton9.Enabled = True
-        End If
-
-        If num = 2 Then
-            DigitButton2.Enabled = True
         End If
 
         If num = 3 Then

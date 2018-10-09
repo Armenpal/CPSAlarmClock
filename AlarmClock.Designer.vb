@@ -26,6 +26,7 @@ Partial Class AlarmClock
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AlarmClock))
         Me.AlarmClockTabs = New System.Windows.Forms.TabControl()
         Me.ClockTab = New System.Windows.Forms.TabPage()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ClockKeypad = New CPS613_AlarmClock.Keypad()
         Me.Alarm3CheckBox = New System.Windows.Forms.CheckBox()
         Me.Alarm2CheckBox = New System.Windows.Forms.CheckBox()
@@ -38,13 +39,12 @@ Partial Class AlarmClock
         Me.AlarmTab3 = New System.Windows.Forms.TabPage()
         Me.Alarm3Panel = New CPS613_AlarmClock.AlarmPanel()
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.AlarmClockTabs.SuspendLayout()
         Me.ClockTab.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AlarmTab1.SuspendLayout()
         Me.AlarmTab2.SuspendLayout()
         Me.AlarmTab3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'AlarmClockTabs
@@ -77,6 +77,16 @@ Partial Class AlarmClock
         Me.ClockTab.TabIndex = 0
         Me.ClockTab.Text = "Clock"
         Me.ClockTab.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Enabled = False
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(65, 165)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(116, 97)
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
         '
         'ClockKeypad
         '
@@ -139,6 +149,7 @@ Partial Class AlarmClock
         '
         'Alarm1Panel
         '
+        Me.Alarm1Panel.BackColor = System.Drawing.Color.LightGray
         Me.Alarm1Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Alarm1Panel.ForeColor = System.Drawing.Color.Black
         Me.Alarm1Panel.Location = New System.Drawing.Point(-5, -1)
@@ -160,6 +171,7 @@ Partial Class AlarmClock
         '
         'Alarm2Panel
         '
+        Me.Alarm2Panel.BackColor = System.Drawing.Color.RosyBrown
         Me.Alarm2Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Alarm2Panel.Location = New System.Drawing.Point(-4, 0)
         Me.Alarm2Panel.Margin = New System.Windows.Forms.Padding(4)
@@ -180,6 +192,7 @@ Partial Class AlarmClock
         '
         'Alarm3Panel
         '
+        Me.Alarm3Panel.BackColor = System.Drawing.Color.AntiqueWhite
         Me.Alarm3Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Alarm3Panel.Location = New System.Drawing.Point(-4, 0)
         Me.Alarm3Panel.Margin = New System.Windows.Forms.Padding(4)
@@ -190,16 +203,6 @@ Partial Class AlarmClock
         'Timer
         '
         Me.Timer.Interval = 1000
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Enabled = False
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(65, 165)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(116, 97)
-        Me.PictureBox1.TabIndex = 7
-        Me.PictureBox1.TabStop = False
         '
         'AlarmClock
         '
@@ -213,10 +216,10 @@ Partial Class AlarmClock
         Me.AlarmClockTabs.ResumeLayout(False)
         Me.ClockTab.ResumeLayout(False)
         Me.ClockTab.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AlarmTab1.ResumeLayout(False)
         Me.AlarmTab2.ResumeLayout(False)
         Me.AlarmTab3.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

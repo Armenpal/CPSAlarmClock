@@ -68,9 +68,10 @@ Partial Class AlarmPanel
         'AlarmPictureBox
         '
         Me.AlarmPictureBox.BackgroundImage = CType(resources.GetObject("AlarmPictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.AlarmPictureBox.Enabled = False
         Me.AlarmPictureBox.Location = New System.Drawing.Point(37, 137)
         Me.AlarmPictureBox.Name = "AlarmPictureBox"
-        Me.AlarmPictureBox.Size = New System.Drawing.Size(100, 95)
+        Me.AlarmPictureBox.Size = New System.Drawing.Size(77, 86)
         Me.AlarmPictureBox.TabIndex = 6
         Me.AlarmPictureBox.TabStop = False
         '

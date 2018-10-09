@@ -4,9 +4,12 @@
     Public DigitLED2 As New DigitLED()
     Public DigitLED3 As New DigitLED()
     Public DigitLED4 As New DigitLED()
-    Public DigitButton0 As Button
-    Public DigitButton1 As Button
     Public num As Integer
+    Dim dateTimeInfo As DateTime = DateTime.Now
+    Dim time As String = dateTimeInfo.ToString("hh")
+    Dim TimeMin As String = dateTimeInfo.ToString("mm")
+    Dim AmPm As String = Format(Now, "tt")
+    Dim timeCheck As String
 
     Public Sub AlarmClock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ClockKeypad.CloseKeypad()
@@ -73,32 +76,36 @@
     End Sub
 
     Public Sub Timer_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
+        DigitLED1.setDigit(time.Chars(0))
+        DigitLED2.setDigit(time.Chars(1))
+        DigitLED3.setDigit(TimeMin.Chars(0))
+        DigitLED4.setDigit(TimeMin.Chars(1))
+        timeCheck = DigitLED1.GetDigit() & DigitLED2.GetDigit() & ":" & DigitLED3.GetDigit() & DigitLED4.GetDigit()
 
-        If Alarm1Panel.TimePanel.getTime() = "" And Alarm1Panel.TimePanel.AMRadioButton.Checked = True Then
+        If Alarm1Panel.TimePanel.getTime() = timeCheck And Alarm1Panel.TimePanel.AMRadioButton.Checked = True Then
             PlaySoundEffect(Alarm1Panel.Alarmsound)
             Alarm1Panel.AnimatePicture()
         End If
-        If Alarm1Panel.TimePanel.getTime() = "" And Alarm1Panel.TimePanel.PMRadioButton.Checked = True Then
+        If Alarm1Panel.TimePanel.getTime() = timeCheck And Alarm1Panel.TimePanel.PMRadioButton.Checked = True Then
             PlaySoundEffect(Alarm1Panel.Alarmsound)
             Alarm1Panel.AnimatePicture()
         End If
 
-
-        If Alarm2Panel.TimePanel.getTime() = "" And Alarm2Panel.TimePanel.AMRadioButton.Checked = True Then
+        If Alarm2Panel.TimePanel.getTime() = timeCheck And Alarm2Panel.TimePanel.AMRadioButton.Checked = True Then
             PlaySoundEffect(Alarm2Panel.Alarmsound)
             Alarm2Panel.AnimatePicture()
         End If
-        If Alarm2Panel.TimePanel.getTime() = "" And Alarm2Panel.TimePanel.PMRadioButton.Checked = True Then
+        If Alarm2Panel.TimePanel.getTime() = timeCheck And Alarm2Panel.TimePanel.PMRadioButton.Checked = True Then
             PlaySoundEffect(Alarm2Panel.Alarmsound)
             Alarm2Panel.AnimatePicture()
         End If
 
 
-        If Alarm3Panel.TimePanel.getTime() = "" And Alarm3Panel.TimePanel.AMRadioButton.Checked = True Then
+        If Alarm3Panel.TimePanel.getTime() = timeCheck And Alarm3Panel.TimePanel.AMRadioButton.Checked = True Then
             PlaySoundEffect(Alarm3Panel.Alarmsound)
             Alarm3Panel.AnimatePicture()
         End If
-        If Alarm3Panel.TimePanel.getTime() = "" And Alarm3Panel.TimePanel.PMRadioButton.Checked = True Then
+        If Alarm3Panel.TimePanel.getTime() = timeCheck And Alarm3Panel.TimePanel.PMRadioButton.Checked = True Then
             PlaySoundEffect(Alarm3Panel.Alarmsound)
             Alarm3Panel.AnimatePicture()
         End If

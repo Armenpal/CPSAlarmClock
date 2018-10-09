@@ -103,18 +103,22 @@ Public Class TimePanel
         End If
 
         If type = "clock" Then
+            alarmTime = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
             AlarmClock.ClockTimePanel.TimeLabel.Text = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
         End If
 
         If type = "alarm1" Then
+            alarmTime = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
             AlarmClock.Alarm1Panel.TimePanel.TimeLabel.Text = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
         End If
 
         If type = "alarm2" Then
+            alarmTime = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
             AlarmClock.Alarm2Panel.TimePanel.TimeLabel.Text = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
         End If
 
         If type = "alarm3" Then
+            alarmTime = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
             AlarmClock.Alarm3Panel.TimePanel.TimeLabel.Text = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
         End If
     End Sub

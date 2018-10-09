@@ -31,23 +31,25 @@ Public Class AlarmPanel
     End Sub
 
     Public Sub ListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox.SelectedIndexChanged
-        sender = ListBox.SelectedIndex
+        sender = ListBox.SelectedItem
 
-        If sender = "Birds" Then
-            Alarmsound = "Brids"
-        End If
-        If sender = "Crows" Then
-            Alarmsound = "Crows"
-        End If
-        If sender = "Train" Then
-            Alarmsound = "Train"
-        End If
-        If sender = "Crickets" Then
-            Alarmsound = "Crickets"
-        End If
-        If sender = "Boat Horn" Then
-            Alarmsound = "Boat Horn"
-        End If
+        Select Case sender
+
+            Case "Birds"
+                Alarmsound = "Brids"
+
+            Case "Crows"
+                Alarmsound = "Crows"
+
+            Case "Train"
+                Alarmsound = "Train"
+
+            Case "Crickets"
+                Alarmsound = "Crickets"
+
+            Case "Boat Horn"
+                Alarmsound = "Boat Horn"
+        End Select
     End Sub
 
     Private Sub AlarmPictureBox_Click(sender As Object, e As EventArgs) Handles AlarmPictureBox.Click
