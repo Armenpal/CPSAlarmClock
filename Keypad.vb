@@ -41,12 +41,22 @@
         Dim button As Button = sender
 
         For Each num In buttonArray
+
             If Digit1set = False Then
-                activateDigits(1)
-                Digit1.setDigit(button.Text)
-                Digit1set = True
+
+                If Digit1.minDigitValue = 0 Then
+                    activateDigits(2)
+                    Digit1.setDigit(button.Text)
+                    Digit1set = True
+                End If
+                If Digit1.minDigitValue < 1 Then
+                    activateDigits(1)
+                    Digit1.setDigit(button.Text)
+                    Digit1set = True
+                End If
                 Exit For
             End If
+
             If Digit2set = False Then
                 DeactivateDigit(3)
                 Digit2set = True
@@ -93,7 +103,11 @@
             Digit2.setDigit(time.Chars(1))
             Digit3.setDigit(TimeMin.Chars(0))
             Digit4.setDigit(TimeMin.Chars(1))
-            AlarmClock.ClockTimePanel.setTime(Digit1, Digit2, Digit3, Digit4)
+            AlarmClock.ClockTimePanel.setTime(Digit1, Digit2, Digit3, Digit4, "clock")
+            Digit1set = False
+            Digit2set = False
+            Digit3set = False
+            Digit4set = False
             CloseKeypad()
         End If
 
@@ -102,8 +116,12 @@
             Digit2.setDigit("0")
             Digit3.setDigit("0")
             Digit4.setDigit("0")
-            AlarmClock.Alarm1Panel.TimePanel.setTime(Digit1, Digit2, Digit3, Digit4)
+            AlarmClock.Alarm1Panel.TimePanel.setTime(Digit1, Digit2, Digit3, Digit4, "alarm1")
             AlarmClock.Alarm1Panel.TimePanel.AMRadioButton.Checked = True
+            Digit1set = False
+            Digit2set = False
+            Digit3set = False
+            Digit4set = False
             CloseKeypad()
         End If
 
@@ -112,8 +130,12 @@
             Digit2.setDigit("0")
             Digit3.setDigit("0")
             Digit4.setDigit("0")
-            AlarmClock.Alarm2Panel.TimePanel.setTime(Digit1, Digit2, Digit3, Digit4)
+            AlarmClock.Alarm2Panel.TimePanel.setTime(Digit1, Digit2, Digit3, Digit4, "alarm2")
             AlarmClock.Alarm2Panel.TimePanel.AMRadioButton.Checked = True
+            Digit1set = False
+            Digit2set = False
+            Digit3set = False
+            Digit4set = False
             CloseKeypad()
         End If
 
@@ -122,8 +144,12 @@
             Digit2.setDigit("0")
             Digit3.setDigit("0")
             Digit4.setDigit("0")
-            AlarmClock.Alarm3Panel.TimePanel.setTime(Digit1, Digit2, Digit3, Digit4)
+            AlarmClock.Alarm3Panel.TimePanel.setTime(Digit1, Digit2, Digit3, Digit4, "alarm3")
             AlarmClock.Alarm3Panel.TimePanel.AMRadioButton.Checked = True
+            Digit1set = False
+            Digit2set = False
+            Digit3set = False
+            Digit4set = False
             CloseKeypad()
         End If
 
@@ -133,24 +159,26 @@
         sender = AlarmClock.AlarmClockTabs.SelectedTab.Name
 
         If sender = "ClockTab" Then
-            AlarmClock.ClockTimePanel.setTime(Digit1, Digit2, Digit3, Digit4)
+            AlarmClock.ClockTimePanel.setTime(Digit1, Digit2, Digit3, Digit4, "clock")
             CloseKeypad()
         End If
 
         If sender = "AlarmTab1" Then
-            AlarmClock.Alarm1Panel.TimePanel.setTime(Digit1, Digit2, Digit3, Digit4)
+            AlarmClock.Alarm1Panel.TimePanel.setTime(Digit1, Digit2, Digit3, Digit4, "alarm1")
             CloseKeypad()
         End If
 
         If sender = "AlarmTab2" Then
-            AlarmClock.Alarm2Panel.TimePanel.setTime(Digit1, Digit2, Digit3, Digit4)
+            AlarmClock.Alarm2Panel.TimePanel.setTime(Digit1, Digit2, Digit3, Digit4, "alarm2")
             CloseKeypad()
         End If
 
         If sender = "AlarmTab3" Then
-            AlarmClock.Alarm3Panel.TimePanel.setTime(Digit1, Digit2, Digit3, Digit4)
+            AlarmClock.Alarm3Panel.TimePanel.setTime(Digit1, Digit2, Digit3, Digit4, "alarm3")
             CloseKeypad()
         End If
+
+        DeactivateDigit(1)
     End Sub
 
     Public Sub Keypad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -169,7 +197,7 @@
             DigitButton8.Enabled = False
             DigitButton9.Enabled = False
         End If
-        If num = 2 And Digit1.GetDigit() = "1" Then
+        If num = 2 Then
             DigitButton3.Enabled = False
             DigitButton4.Enabled = False
             DigitButton5.Enabled = False
@@ -197,6 +225,11 @@
             DigitButton8.Enabled = True
             DigitButton9.Enabled = True
         End If
+
+        If num = 2 Then
+            DigitButton2.Enabled = True
+        End If
+
         If num = 3 Then
             DigitButton6.Enabled = True
             DigitButton7.Enabled = True

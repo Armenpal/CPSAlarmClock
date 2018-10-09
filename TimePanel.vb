@@ -18,7 +18,7 @@ Public Class TimePanel
         DigitLED2.setDigit(time.Chars(1))
         DigitLED3.setDigit(TimeMin.Chars(0))
         DigitLED4.setDigit(TimeMin.Chars(1))
-        setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4)
+        setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4, "clock")
 
     End Sub
 
@@ -32,7 +32,7 @@ Public Class TimePanel
             DigitLED2.setDigit(time.Chars(1))
             DigitLED3.setDigit(TimeMin.Chars(0))
             DigitLED4.setDigit(TimeMin.Chars(1))
-            setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4)
+            setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4, "clock")
             AlarmClock.ClockKeypad.CloseKeypad()
         End If
 
@@ -41,7 +41,7 @@ Public Class TimePanel
             DigitLED2.setDigit("0")
             DigitLED3.setDigit("0")
             DigitLED4.setDigit("0")
-            setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4)
+            setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4, "alarm1")
             AlarmClock.Alarm1Panel.TimePanel.AMRadioButton.Checked = True
             AlarmClock.Alarm1Panel.AlarmKeypad.CloseKeypad()
         End If
@@ -51,7 +51,7 @@ Public Class TimePanel
             DigitLED2.setDigit("0")
             DigitLED3.setDigit("0")
             DigitLED4.setDigit("0")
-            setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4)
+            setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4, "alarm2")
             AlarmClock.Alarm2Panel.TimePanel.AMRadioButton.Checked = True
             AlarmClock.Alarm2Panel.AlarmKeypad.CloseKeypad()
         End If
@@ -61,7 +61,7 @@ Public Class TimePanel
             DigitLED2.setDigit("0")
             DigitLED3.setDigit("0")
             DigitLED4.setDigit("0")
-            setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4)
+            setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4, "alarm3")
             AlarmClock.Alarm3Panel.TimePanel.AMRadioButton.Checked = True
             AlarmClock.Alarm3Panel.AlarmKeypad.CloseKeypad()
         End If
@@ -75,7 +75,7 @@ Public Class TimePanel
             DigitLED2.setDigit("0")
             DigitLED3.setDigit("0")
             DigitLED4.setDigit("0")
-            setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4)
+            setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4, "clock")
             AlarmClock.ClockKeypad.ActivateKeypad()
         End If
 
@@ -92,7 +92,7 @@ Public Class TimePanel
         End If
     End Sub
 
-    Public Sub setTime(time As DigitLED, time2 As DigitLED, time3 As DigitLED, time4 As DigitLED)
+    Public Sub setTime(time As DigitLED, time2 As DigitLED, time3 As DigitLED, time4 As DigitLED, type As String)
 
         If AmPm = "PM" Then
             AlarmClock.ClockTimePanel.PMRadioButton.Checked = True
@@ -101,8 +101,22 @@ Public Class TimePanel
         If AmPm = "AM" Then
             AlarmClock.ClockTimePanel.AMRadioButton.Checked = True
         End If
-        AlarmClock.ClockTimePanel.TimeLabel.Text = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
 
+        If type = "clock" Then
+            AlarmClock.ClockTimePanel.TimeLabel.Text = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
+        End If
+
+        If type = "alarm1" Then
+            AlarmClock.Alarm1Panel.TimePanel.TimeLabel.Text = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
+        End If
+
+        If type = "alarm2" Then
+            AlarmClock.Alarm2Panel.TimePanel.TimeLabel.Text = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
+        End If
+
+        If type = "alarm3" Then
+            AlarmClock.Alarm3Panel.TimePanel.TimeLabel.Text = time.GetDigit() & time2.GetDigit() & ":" & time3.GetDigit() & time4.GetDigit()
+        End If
     End Sub
 
     Public Function getTime() As String

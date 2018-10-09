@@ -1,6 +1,5 @@
 ﻿Public Class AlarmClock
 
-    Public see As Boolean
     Public DigitLED1 As New DigitLED()
     Public DigitLED2 As New DigitLED()
     Public DigitLED3 As New DigitLED()

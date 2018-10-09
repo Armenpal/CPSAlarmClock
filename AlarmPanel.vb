@@ -37,16 +37,16 @@ Public Class AlarmPanel
             Alarmsound = "Brids"
         End If
         If sender = "Crows" Then
-            Alarmsound = "Brids"
+            Alarmsound = "Crows"
         End If
         If sender = "Train" Then
-            Alarmsound = "Brids"
+            Alarmsound = "Train"
         End If
         If sender = "Crickets" Then
-            Alarmsound = "Brids"
+            Alarmsound = "Crickets"
         End If
         If sender = "Boat Horn" Then
-            Alarmsound = "Brids"
+            Alarmsound = "Boat Horn"
         End If
     End Sub
 
