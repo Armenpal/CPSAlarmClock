@@ -1,10 +1,7 @@
 ﻿
 Public Class TimePanel
 
-    Public OldTime As String
-    Public NewTime As String
-    Public currentDigit As Integer
-    Public Alarmkeypad As Keypad
+    Public alarmTime As String
     Public DigitLED1 As New DigitLED()
     Public DigitLED2 As New DigitLED()
     Public DigitLED3 As New DigitLED()
@@ -21,7 +18,6 @@ Public Class TimePanel
         DigitLED2.setDigit(time.Chars(1))
         DigitLED3.setDigit(TimeMin.Chars(0))
         DigitLED4.setDigit(TimeMin.Chars(1))
-        OldTime = DigitLED1.minDigitValue & DigitLED2.minDigitValue & ":" & DigitLED3.minDigitValue & DigitLED4.minDigitValue
         setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4)
 
     End Sub
@@ -110,6 +106,6 @@ Public Class TimePanel
     End Sub
 
     Public Function getTime() As String
-        Return OldTime
+        Return alarmtime
     End Function
 End Class

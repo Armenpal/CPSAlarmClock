@@ -7,10 +7,6 @@
         Return minDigitValue
     End Function
 
-    Public Sub SetColour()
-
-    End Sub
-
     Public Property MaxDigit As Integer
         Get
             Return maxDigitValue

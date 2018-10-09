@@ -74,7 +74,35 @@
     End Sub
 
     Public Sub Timer_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
-        'PlaySoundEffect()
+
+        If Alarm1Panel.TimePanel.getTime() = "" And Alarm1Panel.TimePanel.AMRadioButton.Checked = True Then
+            PlaySoundEffect(Alarm1Panel.Alarmsound)
+            Alarm1Panel.AnimatePicture()
+        End If
+        If Alarm1Panel.TimePanel.getTime() = "" And Alarm1Panel.TimePanel.PMRadioButton.Checked = True Then
+            PlaySoundEffect(Alarm1Panel.Alarmsound)
+            Alarm1Panel.AnimatePicture()
+        End If
+
+
+        If Alarm2Panel.TimePanel.getTime() = "" And Alarm2Panel.TimePanel.AMRadioButton.Checked = True Then
+            PlaySoundEffect(Alarm2Panel.Alarmsound)
+            Alarm2Panel.AnimatePicture()
+        End If
+        If Alarm2Panel.TimePanel.getTime() = "" And Alarm2Panel.TimePanel.PMRadioButton.Checked = True Then
+            PlaySoundEffect(Alarm2Panel.Alarmsound)
+            Alarm2Panel.AnimatePicture()
+        End If
+
+
+        If Alarm3Panel.TimePanel.getTime() = "" And Alarm3Panel.TimePanel.AMRadioButton.Checked = True Then
+            PlaySoundEffect(Alarm3Panel.Alarmsound)
+            Alarm3Panel.AnimatePicture()
+        End If
+        If Alarm3Panel.TimePanel.getTime() = "" And Alarm3Panel.TimePanel.PMRadioButton.Checked = True Then
+            PlaySoundEffect(Alarm3Panel.Alarmsound)
+            Alarm3Panel.AnimatePicture()
+        End If
     End Sub
 
 
