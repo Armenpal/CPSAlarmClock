@@ -12,16 +12,6 @@ Public Class TimePanel
     Dim AmPm As String = Format(Now, "tt")
 
 
-    Public Sub TimePanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        DigitLED1.setDigit(time.Chars(0))
-        DigitLED2.setDigit(time.Chars(1))
-        DigitLED3.setDigit(TimeMin.Chars(0))
-        DigitLED4.setDigit(TimeMin.Chars(1))
-        setTime(DigitLED1, DigitLED2, DigitLED3, DigitLED4, "clock")
-
-    End Sub
-
     Public Sub ResetButton_Click(sender As Object, e As EventArgs) Handles ResetButton.Click
         ResetTime()
     End Sub

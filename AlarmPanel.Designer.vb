@@ -25,16 +25,16 @@ Partial Class AlarmPanel
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AlarmPanel))
         Me.ListBox = New System.Windows.Forms.ListBox()
         Me.AlarmCheckBox = New System.Windows.Forms.CheckBox()
-        Me.TimePanel = New CPS613_AlarmClock.TimePanel()
-        Me.AlarmKeypad = New CPS613_AlarmClock.Keypad()
         Me.AlarmPictureBox = New System.Windows.Forms.PictureBox()
+        Me.AlarmKeypad = New CPS613_AlarmClock.Keypad()
+        Me.TimePanel = New CPS613_AlarmClock.TimePanel()
         CType(Me.AlarmPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ListBox
         '
         Me.ListBox.FormattingEnabled = True
-        Me.ListBox.Items.AddRange(New Object() {"Birds", "Crows", "Train", "Crickets", "Boat Horn"})
+        Me.ListBox.Items.AddRange(New Object() {"Birds", "Cow", "Train", "Crickets", "Boat Horn"})
         Me.ListBox.Location = New System.Drawing.Point(240, 137)
         Me.ListBox.Name = "ListBox"
         Me.ListBox.Size = New System.Drawing.Size(120, 95)
@@ -50,13 +50,15 @@ Partial Class AlarmPanel
         Me.AlarmCheckBox.Text = "Alarm On"
         Me.AlarmCheckBox.UseVisualStyleBackColor = True
         '
-        'TimePanel
+        'AlarmPictureBox
         '
-        Me.TimePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TimePanel.Location = New System.Drawing.Point(27, 3)
-        Me.TimePanel.Name = "TimePanel"
-        Me.TimePanel.Size = New System.Drawing.Size(333, 86)
-        Me.TimePanel.TabIndex = 0
+        Me.AlarmPictureBox.Enabled = False
+        Me.AlarmPictureBox.Image = CType(resources.GetObject("AlarmPictureBox.Image"), System.Drawing.Image)
+        Me.AlarmPictureBox.Location = New System.Drawing.Point(37, 137)
+        Me.AlarmPictureBox.Name = "AlarmPictureBox"
+        Me.AlarmPictureBox.Size = New System.Drawing.Size(77, 86)
+        Me.AlarmPictureBox.TabIndex = 6
+        Me.AlarmPictureBox.TabStop = False
         '
         'AlarmKeypad
         '
@@ -65,15 +67,13 @@ Partial Class AlarmPanel
         Me.AlarmKeypad.Size = New System.Drawing.Size(310, 123)
         Me.AlarmKeypad.TabIndex = 5
         '
-        'AlarmPictureBox
+        'TimePanel
         '
-        Me.AlarmPictureBox.BackgroundImage = CType(resources.GetObject("AlarmPictureBox.BackgroundImage"), System.Drawing.Image)
-        Me.AlarmPictureBox.Enabled = False
-        Me.AlarmPictureBox.Location = New System.Drawing.Point(37, 137)
-        Me.AlarmPictureBox.Name = "AlarmPictureBox"
-        Me.AlarmPictureBox.Size = New System.Drawing.Size(77, 86)
-        Me.AlarmPictureBox.TabIndex = 6
-        Me.AlarmPictureBox.TabStop = False
+        Me.TimePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TimePanel.Location = New System.Drawing.Point(27, 3)
+        Me.TimePanel.Name = "TimePanel"
+        Me.TimePanel.Size = New System.Drawing.Size(333, 86)
+        Me.TimePanel.TabIndex = 0
         '
         'AlarmPanel
         '

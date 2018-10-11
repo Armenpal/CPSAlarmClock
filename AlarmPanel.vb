@@ -52,7 +52,9 @@ Public Class AlarmPanel
         End Select
     End Sub
 
-    Private Sub AlarmPictureBox_Click(sender As Object, e As EventArgs) Handles AlarmPictureBox.Click
+    Public Sub AlarmPictureBox_Click(sender As Object, e As EventArgs) Handles AlarmPictureBox.Click
         AlarmPictureBox.Enabled = False
+        StopSoundEffect()
+
     End Sub
 End Class
